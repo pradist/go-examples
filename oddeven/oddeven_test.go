@@ -19,6 +19,8 @@ func TestOddEvenFind(t *testing.T) {
 	}{
 		{"When input is 1 should retuen odd", args{1}, "Odd"},
 		{"When input is 2 should retuen Even", args{2}, "Even"},
+		{"When input is 3 should retuen odd", args{3}, "Odd"},
+		{"When input is 4 should retuen Even", args{4}, "Even"},
 	}
 
 	for _, test := range tests {
