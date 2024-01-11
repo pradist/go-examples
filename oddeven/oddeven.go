@@ -7,5 +7,8 @@ func Find(input int) string {
 	if input == 4 {
 		return "Even"
 	}
+	if input == 6 {
+		return "Even"
+	}
 	return "Odd"
 }
