@@ -4,10 +4,10 @@ func Find(input int) string {
 	if input%2 == 0 {
 		return "Even"
 	}
-	if input == 4 {
+	if input%2 == 0 {
 		return "Even"
 	}
-	if input == 6 {
+	if input%2 == 0 {
 		return "Even"
 	}
 	return "Odd"
