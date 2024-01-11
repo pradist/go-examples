@@ -4,6 +4,8 @@ import (
 	"go-examples/oddeven"
 
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestOddEvenFind(t *testing.T) {
@@ -20,10 +22,7 @@ func TestOddEvenFind(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			actual := oddeven.Find(test.args.input)
-			if actual != test.want {
-				t.Errorf("Expected %s but it got %s", test.want, actual)
-			}
+			assert.Equal(t, test.want, oddeven.Find(test.args.input))
 		})
 	}
 }
