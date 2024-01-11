@@ -23,6 +23,8 @@ func TestOddEvenFind(t *testing.T) {
 		{"When input is 4 should retuen Even", args{4}, "Even"},
 		{"When input is 5 should retuen odd", args{5}, "Odd"},
 		{"When input is 6 should retuen Even", args{6}, "Even"},
+		{"When input is 59 should retuen odd", args{59}, "Odd"},
+		{"When input is 60 should retuen Even", args{60}, "Even"},
 		{"When input is 99 should retuen odd", args{99}, "Odd"},
 		{"When input is 100 should retuen Even", args{100}, "Even"},
 	}
