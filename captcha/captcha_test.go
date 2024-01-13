@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestCaptchaLeftOperand_WhenPattern1andInputIs1_SouldReturn1(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs1andInputIs1_ShouldReturn1(t *testing.T) {
 	expected := "1"
 
 	actual := captcha.LeftOperand(1, 1)
@@ -15,7 +15,7 @@ func TestCaptchaLeftOperand_WhenPattern1andInputIs1_SouldReturn1(t *testing.T) {
 	}
 }
 
-func TestCaptchaLeftOperand_WhenPattern1andInputIs2_SouldReturn2(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs1andInputIs2_ShouldReturn2(t *testing.T) {
 	expected := "2"
 
 	actual := captcha.LeftOperand(1, 2)
