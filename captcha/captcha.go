@@ -1,14 +1,16 @@
 package captcha
 
+import "strconv"
+
 func LeftOperand(pattern, left int) string {
 	if left == 2 {
-		return "2"
+		return strconv.Itoa(left)
 	}
 	if left == 3 {
-		return "3"
+		return strconv.Itoa(left)
 	}
 	if left == 4 {
-		return "4"
+		return strconv.Itoa(left)
 	}
-	return "1"
+	return strconv.Itoa(left)
 }
