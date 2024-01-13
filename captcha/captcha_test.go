@@ -44,3 +44,13 @@ func TestCaptchaLeftOperand_WhenPatternIs1andInputIs4_ShouldReturn4(t *testing.T
 		t.Errorf("expect %s but it got %s", expected, actual)
 	}
 }
+
+func TestCaptchaLeftOperand_WhenPatternIs2andInputIs1_ShouldReturnOne(t *testing.T) {
+	expected := "One"
+
+	actual := captcha.LeftOperand(2, 1)
+
+	if expected != actual {
+		t.Errorf("expect %s but it got %s", expected, actual)
+	}
+}
