@@ -7,13 +7,13 @@ var number = []string{"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Ei
 func LeftOperand(pattern, left int) string {
 	if pattern == 2 {
 		if left == 2 {
-			return "Two"
+			return number[left-1]
 		}
 		if left == 3 {
-			return "Three"
+			return number[left-1]
 		}
 		if left == 4 {
-			return "Four"
+			return number[left-1]
 		}
 		return number[left-1]
 	}
