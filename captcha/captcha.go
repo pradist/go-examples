@@ -10,6 +10,9 @@ func LeftOperand(pattern, left int) string {
 		if left == 3 {
 			return "Three"
 		}
+		if left == 4 {
+			return "Four"
+		}
 		return "One"
 	}
 	return strconv.Itoa(left)
