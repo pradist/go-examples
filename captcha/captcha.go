@@ -2,11 +2,15 @@ package captcha
 
 import "strconv"
 
-var number = []string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
+var numbers = []string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
 
 func LeftOperand(pattern, left int) string {
 	if pattern == 2 {
-		return number[left]
+		return numbers[left]
 	}
 	return strconv.Itoa(left)
+}
+
+func RightOperand(pattern, right int) string {
+	return "One"
 }
