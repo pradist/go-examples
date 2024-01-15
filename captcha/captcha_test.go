@@ -148,3 +148,13 @@ func TestCaptcha_WhenPatternIs1_LeftOperandIs1_OperatorIs1_RightOperandIs1_Strin
 
 	assert.Equal(t, expected, actual)
 }
+
+func TestCaptcha_WhenPatternIs1_LeftOperandIs1_OperatorIs1_RightOperandIs2_StringShouldReturn1PlusNine(t *testing.T) {
+	captcha := captcha.New(1, 1, 1, 9)
+
+	expected := "1 + Nine"
+
+	actual := captcha.Captcha()
+
+	assert.Equal(t, expected, actual)
+}
