@@ -30,5 +30,8 @@ func (c *Captcha) RightOperand() string {
 }
 
 func (c *Captcha) Operator() string {
-	return "+"
+	if c.operator == 1 {
+		return "+"
+	}
+	return "-"
 }
