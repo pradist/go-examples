@@ -12,5 +12,8 @@ func LeftOperand(pattern, left int) string {
 }
 
 func RightOperand(pattern, right int) string {
+	if pattern == 2 {
+		return "1"
+	}
 	return numbers[right]
 }
