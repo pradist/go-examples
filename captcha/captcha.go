@@ -26,5 +26,5 @@ func (c *Captcha) RightOperand() string {
 	if c.pattern == 1 {
 		return stringNumbers[c.rightOperand]
 	}
-	return "1"
+	return strconv.Itoa(c.leftOperand)
 }
