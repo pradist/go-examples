@@ -33,3 +33,7 @@ func (c *Captcha) RightOperand() string {
 func (c *Captcha) Operator() string {
 	return stringOperators[c.operator-1]
 }
+
+func (c *Captcha) Captcha() string {
+	return c.LeftOperand() + " " + c.Operator() + " " + c.RightOperand()
+}
