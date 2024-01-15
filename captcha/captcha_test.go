@@ -3,6 +3,8 @@ package captcha_test
 import (
 	"go-examples/captcha"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestCaptchaLeftOperand_WhenPatternIs1andInputIs1_ShouldReturn1(t *testing.T) {
@@ -10,9 +12,7 @@ func TestCaptchaLeftOperand_WhenPatternIs1andInputIs1_ShouldReturn1(t *testing.T
 
 	actual := captcha.LeftOperand(1, 1)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs1andInputIs2_ShouldReturn2(t *testing.T) {
@@ -20,9 +20,7 @@ func TestCaptchaLeftOperand_WhenPatternIs1andInputIs2_ShouldReturn2(t *testing.T
 
 	actual := captcha.LeftOperand(1, 2)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs1andInputIs3_ShouldReturn3(t *testing.T) {
@@ -30,9 +28,7 @@ func TestCaptchaLeftOperand_WhenPatternIs1andInputIs3_ShouldReturn3(t *testing.T
 
 	actual := captcha.LeftOperand(1, 3)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs1andInputIs4_ShouldReturn4(t *testing.T) {
@@ -40,9 +36,7 @@ func TestCaptchaLeftOperand_WhenPatternIs1andInputIs4_ShouldReturn4(t *testing.T
 
 	actual := captcha.LeftOperand(1, 4)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs2andInputIs1_ShouldReturnOne(t *testing.T) {
@@ -50,9 +44,7 @@ func TestCaptchaLeftOperand_WhenPatternIs2andInputIs1_ShouldReturnOne(t *testing
 
 	actual := captcha.LeftOperand(2, 1)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs2andInputIs2_ShouldReturnTwo(t *testing.T) {
@@ -60,9 +52,7 @@ func TestCaptchaLeftOperand_WhenPatternIs2andInputIs2_ShouldReturnTwo(t *testing
 
 	actual := captcha.LeftOperand(2, 2)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs2andInputIs3_ShouldReturnThree(t *testing.T) {
@@ -70,9 +60,7 @@ func TestCaptchaLeftOperand_WhenPatternIs2andInputIs3_ShouldReturnThree(t *testi
 
 	actual := captcha.LeftOperand(2, 3)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaLeftOperand_WhenPatternIs2andInputIs4_ShouldReturnFour(t *testing.T) {
@@ -80,9 +68,7 @@ func TestCaptchaLeftOperand_WhenPatternIs2andInputIs4_ShouldReturnFour(t *testin
 
 	actual := captcha.LeftOperand(2, 4)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaRightOperand_WhenPatternIs1andInputIs1_ShouldReturnOne(t *testing.T) {
@@ -90,9 +76,7 @@ func TestCaptchaRightOperand_WhenPatternIs1andInputIs1_ShouldReturnOne(t *testin
 
 	actual := captcha.RightOperand(1, 1)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaRightOperand_WhenPatternIs1andInputIs2_ShouldReturnTwo(t *testing.T) {
@@ -100,9 +84,7 @@ func TestCaptchaRightOperand_WhenPatternIs1andInputIs2_ShouldReturnTwo(t *testin
 
 	actual := captcha.RightOperand(1, 2)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestCaptchaRightOperand_WhenPatternIs2andInput1_ShouldReturn1(t *testing.T) {
@@ -110,7 +92,5 @@ func TestCaptchaRightOperand_WhenPatternIs2andInput1_ShouldReturn1(t *testing.T)
 
 	actual := captcha.RightOperand(2, 1)
 
-	if expected != actual {
-		t.Errorf("expect %s but it got %s", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
