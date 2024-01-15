@@ -2,18 +2,29 @@ package captcha
 
 import "strconv"
 
-var numbers = []string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
+var stringNumbers = []string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
 
-func LeftOperand(pattern, left int) string {
-	if pattern == 2 {
-		return numbers[left]
-	}
-	return strconv.Itoa(left)
+type Captcha struct {
+	pattern      int
+	leftOperand  int
+	operator     int
+	rightOperand int
 }
 
-func RightOperand(pattern, right int) string {
-	if pattern == 2 {
-		return "1"
+func New(pattern, leftOperand, operator, rightOperand int) *Captcha {
+	return &Captcha{pattern, leftOperand, operator, rightOperand}
+}
+
+func (c *Captcha) LeftOperand() string {
+	if c.pattern == 1 {
+		return strconv.Itoa(c.leftOperand)
 	}
-	return numbers[right]
+	return stringNumbers[c.leftOperand]
+}
+
+func (c *Captcha) RightOperand() string {
+	if c.pattern == 1 {
+		return stringNumbers[c.rightOperand]
+	}
+	return "1"
 }

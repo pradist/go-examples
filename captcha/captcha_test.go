@@ -7,90 +7,114 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestCaptchaLeftOperand_WhenPatternIs1andInputIs1_ShouldReturn1(t *testing.T) {
+var placeholder = 1
+
+func TestCaptchaLeftOperand_WhenPatternIs1andInputIs1_LeftOperandShouldReturn1(t *testing.T) {
+	captcha := captcha.New(1, 1, placeholder, placeholder)
+
 	expected := "1"
 
-	actual := captcha.LeftOperand(1, 1)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs1andInputIs2_ShouldReturn2(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs1andInputIs2_LeftOperandShouldReturn2(t *testing.T) {
+	captcha := captcha.New(1, 2, placeholder, placeholder)
+
 	expected := "2"
 
-	actual := captcha.LeftOperand(1, 2)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs1andInputIs3_ShouldReturn3(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs1andInputIs3_LeftOperandShouldReturn3(t *testing.T) {
+	captcha := captcha.New(1, 3, placeholder, placeholder)
+
 	expected := "3"
 
-	actual := captcha.LeftOperand(1, 3)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs1andInputIs4_ShouldReturn4(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs1andInputIs4_LeftOperandShouldReturn4(t *testing.T) {
+	captcha := captcha.New(1, 4, placeholder, placeholder)
+
 	expected := "4"
 
-	actual := captcha.LeftOperand(1, 4)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs2andInputIs1_ShouldReturnOne(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs2andInputIs1_LeftOperandShouldReturnOne(t *testing.T) {
+	captcha := captcha.New(2, 1, placeholder, placeholder)
+
 	expected := "One"
 
-	actual := captcha.LeftOperand(2, 1)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs2andInputIs2_ShouldReturnTwo(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs2andInputIs2_LeftOperandShouldReturnTwo(t *testing.T) {
+	captcha := captcha.New(2, 2, placeholder, placeholder)
+
 	expected := "Two"
 
-	actual := captcha.LeftOperand(2, 2)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs2andInputIs3_ShouldReturnThree(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs2andInputIs3_LeftOperandShouldReturnThree(t *testing.T) {
+	captcha := captcha.New(2, 3, placeholder, placeholder)
+
 	expected := "Three"
 
-	actual := captcha.LeftOperand(2, 3)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaLeftOperand_WhenPatternIs2andInputIs4_ShouldReturnFour(t *testing.T) {
+func TestCaptchaLeftOperand_WhenPatternIs2andInputIs4_LeftOperandShouldReturnFour(t *testing.T) {
+	captcha := captcha.New(2, 4, placeholder, placeholder)
+
 	expected := "Four"
 
-	actual := captcha.LeftOperand(2, 4)
+	actual := captcha.LeftOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaRightOperand_WhenPatternIs1andInputIs1_ShouldReturnOne(t *testing.T) {
+func TestCaptchaRightOperand_WhenPatternIs1andInputIs1_RightOperandShouldReturnOne(t *testing.T) {
+	captcha := captcha.New(1, 1, placeholder, placeholder)
+
 	expected := "One"
 
-	actual := captcha.RightOperand(1, 1)
+	actual := captcha.RightOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaRightOperand_WhenPatternIs1andInputIs2_ShouldReturnTwo(t *testing.T) {
+func TestCaptchaRightOperand_WhenPatternIs1andInputIs2_RightOperandShouldReturnTwo(t *testing.T) {
+	captcha := captcha.New(1, placeholder, placeholder, 2)
+
 	expected := "Two"
 
-	actual := captcha.RightOperand(1, 2)
+	actual := captcha.RightOperand()
 
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptchaRightOperand_WhenPatternIs2andInput1_ShouldReturn1(t *testing.T) {
+func TestCaptchaRightOperand_WhenPatternIs2andInput1_RightOperandShouldReturn1(t *testing.T) {
+	captcha := captcha.New(2, 1, placeholder, placeholder)
+
 	expected := "1"
 
-	actual := captcha.RightOperand(2, 1)
+	actual := captcha.RightOperand()
 
 	assert.Equal(t, expected, actual)
 }
