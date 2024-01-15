@@ -3,6 +3,7 @@ package captcha
 import "strconv"
 
 var stringNumbers = []string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
+var stringOperators = []string{"+", "-", "/"}
 
 type Captcha struct {
 	pattern      int
@@ -30,8 +31,5 @@ func (c *Captcha) RightOperand() string {
 }
 
 func (c *Captcha) Operator() string {
-	if c.operator == 1 {
-		return "+"
-	}
-	return "-"
+	return stringOperators[c.operator-1]
 }
