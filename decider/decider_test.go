@@ -3,6 +3,8 @@ package decider_test
 import (
 	"go-examples/decider"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestDecider_WhenCalled9_ShouldReturn9(t *testing.T) {
@@ -14,9 +16,7 @@ func TestDecider_WhenCalled9_ShouldReturn9(t *testing.T) {
 
 	actual := decider.Decide(9)
 
-	if expected != actual {
-		t.Errorf("expect %d but it got %d", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestDecideWithRange_WhenCalled1and10_ShouldReturn5(t *testing.T) {
@@ -28,7 +28,5 @@ func TestDecideWithRange_WhenCalled1and10_ShouldReturn5(t *testing.T) {
 
 	actual := decider.DecideWithRange(1, 10)
 
-	if expected != actual {
-		t.Errorf("expect %d but it got %d", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
