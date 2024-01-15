@@ -28,3 +28,7 @@ func (c *Captcha) RightOperand() string {
 	}
 	return strconv.Itoa(c.leftOperand)
 }
+
+func (c *Captcha) Operator() string {
+	return "+"
+}
