@@ -159,10 +159,20 @@ func TestCaptcha_WhenPatternIs1_LeftOperandIs1_OperatorIs1_RightOperandIs2_Strin
 	assert.Equal(t, expected, actual)
 }
 
-func TestCaptcha_WhenPatternIs2_LeftOperandIs1_OperatorIs1_RightOperandIs1_StringShouldReturnOnePlusOne(t *testing.T) {
+func TestCaptcha_WhenPatternIs2_LeftOperandIs1_OperatorIs1_RightOperandIs1_StringShouldReturnOnePlus1(t *testing.T) {
 	captcha := captcha.New(2, 1, 1, 1)
 
 	expected := "One + 1"
+
+	actual := captcha.Captcha()
+
+	assert.Equal(t, expected, actual)
+}
+
+func TestCaptcha_WhenPatternIs2_LeftOperandIs2_OperatorIs3_RightOperandIs5_StringShouldReturnTwoPlus5(t *testing.T) {
+	captcha := captcha.New(2, 2, 3, 5)
+
+	expected := "Two / 5"
 
 	actual := captcha.Captcha()
 
