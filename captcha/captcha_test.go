@@ -119,7 +119,7 @@ func TestCaptchaRightOperand_WhenPatternIs2andRightOperand1_RightOperandShouldRe
 	assert.Equal(t, expected, actual)
 }
 
-func TestCatchaOperator_WhenOperatorIs1_OperatorShouldReturnPlus(t *testing.T) {
+func TestCaptchaOperator_WhenOperatorIs1_OperatorShouldReturnPlus(t *testing.T) {
 	captcha := captcha.New(placeholder, placeholder, 1, placeholder)
 
 	expected := "+"
@@ -129,7 +129,7 @@ func TestCatchaOperator_WhenOperatorIs1_OperatorShouldReturnPlus(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
-func TestCatchaOperator_WhenOperatorIs2_OperatorShouldReturnMinus(t *testing.T) {
+func TestCaptchaOperator_WhenOperatorIs2_OperatorShouldReturnMinus(t *testing.T) {
 	captcha := captcha.New(placeholder, placeholder, 2, placeholder)
 
 	expected := "-"
