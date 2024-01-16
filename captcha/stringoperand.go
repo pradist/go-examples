@@ -1,9 +1,11 @@
 package captcha
 
+var stringNumbers = []string{"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
+
 type StringOperand struct {
-	operand int
+	Operand int
 }
 
 func (o *StringOperand) ToString() string {
-	return stringNumbers[o.operand-1]
+	return stringNumbers[o.Operand-1]
 }

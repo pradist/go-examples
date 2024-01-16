@@ -1,6 +1,7 @@
-package captcha
+package captcha_test
 
 import (
+	"go-examples/captcha"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,7 +10,7 @@ import (
 func TestStringOperandWhenOperandIs1_StringOperandShouldReturnOne(t *testing.T) {
 	expected := "One"
 
-	o := StringOperand{1}
+	o := captcha.StringOperand{1}
 	actual := o.ToString()
 
 	assert.Equal(t, expected, actual)
@@ -18,7 +19,7 @@ func TestStringOperandWhenOperandIs1_StringOperandShouldReturnOne(t *testing.T) 
 func TestStringOperandWhenOperandIs5_StringOperandShouldReturnFive(t *testing.T) {
 	expected := "Five"
 
-	o := StringOperand{5}
+	o := captcha.StringOperand{5}
 	actual := o.ToString()
 
 	assert.Equal(t, expected, actual)
@@ -27,7 +28,7 @@ func TestStringOperandWhenOperandIs5_StringOperandShouldReturnFive(t *testing.T)
 func TestStringOperandWhenOperandIs9_StringOperandShouldReturnNine(t *testing.T) {
 	expected := "Nine"
 
-	o := StringOperand{9}
+	o := captcha.StringOperand{9}
 	actual := o.ToString()
 
 	assert.Equal(t, expected, actual)

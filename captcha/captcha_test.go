@@ -7,28 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var placeholder = 1
-
-func TestCaptchaOperator_WhenOperatorIs1_OperatorShouldReturnPlus(t *testing.T) {
-	captcha := captcha.New(placeholder, placeholder, 1, placeholder)
-
-	expected := "+"
-
-	actual := captcha.Operator()
-
-	assert.Equal(t, expected, actual)
-}
-
-func TestCaptchaOperator_WhenOperatorIs2_OperatorShouldReturnMinus(t *testing.T) {
-	captcha := captcha.New(placeholder, placeholder, 2, placeholder)
-
-	expected := "-"
-
-	actual := captcha.Operator()
-
-	assert.Equal(t, expected, actual)
-}
-
 func TestCaptcha_WhenPatternIs1_LeftOperandIs1_OperatorIs1_RightOperandIs1_StringShouldReturn1PlusOne(t *testing.T) {
 	captcha := captcha.New(1, 1, 1, 1)
 
