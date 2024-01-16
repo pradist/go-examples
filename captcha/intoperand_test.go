@@ -7,17 +7,29 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestIntOperand_WhenOperandIs1_ShouldReturn1(t *testing.T) {
-	operand := captcha.IntOperand{Operand: 1}
-	assert.Equal(t, "1", operand.ToString())
+func TestIntOperandWhenOperandIs1_IntOperandShouldReturn1(t *testing.T) {
+	expected := "1"
+
+	o := captcha.IntOperand{1}
+	actual := o.ToString()
+
+	assert.Equal(t, expected, actual)
 }
 
-func TestIntOperand_WhenOperandIs5_ShouldReturn5(t *testing.T) {
-	operand := captcha.IntOperand{Operand: 2}
-	assert.Equal(t, "2", operand.ToString())
+func TestIntOperandWhenOperandIs5_IntOperandShouldReturn5(t *testing.T) {
+	expected := "5"
+
+	o := captcha.IntOperand{5}
+	actual := o.ToString()
+
+	assert.Equal(t, expected, actual)
 }
 
-func TestIntOperand_WhenOperandIs9_ShouldReturn9(t *testing.T) {
-	operand := captcha.IntOperand{Operand: 9}
-	assert.Equal(t, "9", operand.ToString())
+func TestIntOperandWhenOperandIs9_IntOperandShouldReturn9(t *testing.T) {
+	expected := "9"
+
+	o := captcha.IntOperand{9}
+	actual := o.ToString()
+
+	assert.Equal(t, expected, actual)
 }
