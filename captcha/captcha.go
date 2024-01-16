@@ -2,7 +2,7 @@ package captcha
 
 import "strconv"
 
-var stringNumbers = []string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
+var stringNumbers = []string{"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
 var stringOperators = []string{"+", "-", "/"}
 
 type Captcha struct {
@@ -20,12 +20,12 @@ func (c *Captcha) LeftOperand() string {
 	if c.pattern == 1 {
 		return strconv.Itoa(c.leftOperand)
 	}
-	return stringNumbers[c.leftOperand]
+	return stringNumbers[c.leftOperand-1]
 }
 
 func (c *Captcha) RightOperand() string {
 	if c.pattern == 1 {
-		return stringNumbers[c.rightOperand]
+		return stringNumbers[c.rightOperand-1]
 	}
 	return strconv.Itoa(c.rightOperand)
 }
@@ -35,5 +35,7 @@ func (c *Captcha) Operator() string {
 }
 
 func (c *Captcha) Captcha() string {
-	return c.LeftOperand() + " " + c.Operator() + " " + c.RightOperand()
+	leftOperand := LeftOperandFactory(c.pattern, c.leftOperand)
+	rightOperand := RightOperandFactory(c.pattern, c.rightOperand)
+	return leftOperand.ToString() + " " + c.Operator() + " " + rightOperand.ToString()
 }
