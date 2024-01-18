@@ -19,4 +19,5 @@ func Print() {
 	logger.Info("Info Level")
 	logger.Warn("Warn Level")
 	logger.Error("Error Level")
+    logger.Info("iPad")
 }
