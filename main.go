@@ -1,8 +1,9 @@
 package main
 
-import "go-examples/captcha"
+import (
+	"go-examples/xslog"
+)
 
 func main() {
-	c := captcha.Create()
-	println(c.Captcha())
+	xslog.Print()
 }
