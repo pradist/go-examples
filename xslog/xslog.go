@@ -12,7 +12,7 @@ func Print() {
 	logHandle := slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{
 		Level:     programLevel,
 		AddSource: true,
-	})
+	}).WithAttrs([]slog.Attr{slog.String("service","worker")})
 
 	logger := slog.New(logHandle)
 	logger.Debug("Debug Level")
