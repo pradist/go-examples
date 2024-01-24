@@ -12,11 +12,18 @@ func Print() {
 	logHandle := slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{
 		Level:     programLevel,
 		AddSource: true,
-	}).WithAttrs([]slog.Attr{slog.String("service", "worker")})
+		ReplaceAttr: func(groups []string, l slog.Attr) slog.Attr {
+			if l.Key == slog.MessageKey {
+				l.Key = "message"
+				return l
+			}
+			return l
+		},
+	}).WithAttrs([]slog.Attr{
+		slog.String("app", "xslog"),
+		slog.String("version", "1.0.0"),
+	})
 
 	logger := slog.New(logHandle)
-	logger.Debug("Debug Level")
-	logger.Info("Info Level")
-	logger.Warn("Warn Level")
-	logger.Error("Error Level")
+	logger.Info("Hello World!")
 }
