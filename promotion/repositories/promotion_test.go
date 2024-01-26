@@ -7,6 +7,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestPromotionGet_ShouldReturnIDIs10(t *testing.T) {
+	expected := 1
+
+	actual := repositories.Get().ID
+
+	assert.Equal(t, expected, actual)
+}
+
 func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
 	expected := 10
 
