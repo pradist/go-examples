@@ -3,6 +3,8 @@ package repositories_test
 import (
 	"go-examples/promotion/repositories"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
@@ -10,9 +12,7 @@ func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
 
 	actual := repositories.Get().DiscountPercent
 
-	if expected != actual {
-		t.Errorf("expected %v but it got %v", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestPromotionGet_ShouldReturnPurchaseMinIs100(t *testing.T) {
@@ -20,7 +20,5 @@ func TestPromotionGet_ShouldReturnPurchaseMinIs100(t *testing.T) {
 
 	actual := repositories.Get().PurchaseMin
 
-	if expected != actual {
-		t.Errorf("expected %v but it got %v", expected, actual)
-	}
+	assert.Equal(t, expected, actual)
 }
