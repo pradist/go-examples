@@ -1,5 +1,13 @@
 package repositories
 
-func Get() int {
-	return 10
+type Promotion struct {
+	PurchaseMin     int
+	DiscountPercent int
+}
+
+func Get() Promotion {
+	return Promotion{
+		PurchaseMin:     100,
+		DiscountPercent: 10,
+	}
 }

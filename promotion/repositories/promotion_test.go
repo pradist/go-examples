@@ -5,13 +5,22 @@ import (
 	"testing"
 )
 
-func TestPromotion_ShouldDiscountPercentIs10(t *testing.T) {
+func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
 	expected := 10
 
-	actual := repositories.Get()
+	actual := repositories.Get().DiscountPercent
 
 	if expected != actual {
 		t.Errorf("expected %v but it got %v", expected, actual)
 	}
+}
 
+func TestPromotionGet_ShouldReturnPurchaseMinIs100(t *testing.T) {
+	expected := 100
+
+	actual := repositories.Get().PurchaseMin
+
+	if expected != actual {
+		t.Errorf("expected %v but it got %v", expected, actual)
+	}
 }
