@@ -15,3 +15,11 @@ func TestPromotionService_WhenAmountIs100_ShouldPay90(t *testing.T) {
 
 	assert.Equal(t, expected, actual)
 }
+
+func TestPromotionService_WhenAmountIs200_ShouldPay180(t *testing.T) {
+	expected := 180
+
+	actual := services.CalculateDiscount(200)
+
+	assert.Equal(t, expected, actual)
+}
