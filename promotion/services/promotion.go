@@ -1,11 +1,9 @@
 package services
 
+import "go-examples/promotion/repositories"
+
 func CalculateDiscount(amount int) int {
-	if amount == 200 {
-		return 180
-	}
-	if amount == 300 {
-		return 370
-	}
-	return 90
+
+	promotion := repositories.Get()
+	return amount - (amount * promotion.DiscountPercent / 100)
 }
