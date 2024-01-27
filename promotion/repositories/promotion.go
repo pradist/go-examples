@@ -6,10 +6,14 @@ type Promotion struct {
 	DiscountPercent int
 }
 
-func Get() Promotion {
+func New() Promotion {
 	return Promotion{
 		ID:              1,
 		PurchaseMin:     100,
 		DiscountPercent: 10,
 	}
+}
+
+func (p Promotion) Get() Promotion {
+	return p
 }
