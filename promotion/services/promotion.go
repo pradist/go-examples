@@ -1,19 +1,27 @@
 package services
 
 import (
-	"errors"
 	"go-examples/promotion/repositories"
+
+	"errors"
 )
 
-func CalculateDiscount(amount int) (int, error) {
+type PromotionService struct {
+	repo repositories.Promotion
+}
 
+func New(repo repositories.Promotion) PromotionService {
+	return PromotionService{
+		repo: repo,
+	}
+}
+
+func (p PromotionService) CalculateDiscount(amount int) (int, error) {
 	if amount == 0 {
 		return 0, errors.New("amount is less than zero")
 	}
 
-	p := repositories.New()
-
-	promotion := p.Get()
+	promotion := repositories.New()
 
 	return amount - (amount * promotion.DiscountPercent / 100), nil
 }
