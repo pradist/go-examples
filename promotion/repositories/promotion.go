@@ -14,6 +14,6 @@ func New() Promotion {
 	}
 }
 
-func (p Promotion) Get() Promotion {
-	return p
+func (p Promotion) Get() (Promotion, error) {
+	return p, nil
 }
