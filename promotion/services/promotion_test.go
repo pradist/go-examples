@@ -33,8 +33,8 @@ func NewPromotionRepositoriesMock() *promotionRepositoriesMock {
 func TestPromotionService_WhenAmountIs0_ShouldReturnError(t *testing.T) {
 	expected := errors.New("amount is less than zero")
 
-	r := NewPromotionRepositoriesMock()
-	s := services.New(r.GetPromotion())
+	r := NewPromotionRepositoriesMock().GetPromotion()
+	s := services.New(r)
 	_, actual := s.CalculateDiscount(0)
 
 	assert.Equal(t, expected, actual)
@@ -43,8 +43,8 @@ func TestPromotionService_WhenAmountIs0_ShouldReturnError(t *testing.T) {
 func TestPromotionService_WhenAmountIs100_ShouldPay90(t *testing.T) {
 	expected := 90
 
-	r := NewPromotionRepositoriesMock()
-	s := services.New(r.GetPromotion())
+	r := NewPromotionRepositoriesMock().GetPromotion()
+	s := services.New(r)
 	actual, _ := s.CalculateDiscount(100)
 
 	assert.Equal(t, expected, actual)
@@ -53,8 +53,8 @@ func TestPromotionService_WhenAmountIs100_ShouldPay90(t *testing.T) {
 func TestPromotionService_WhenAmountIs200_ShouldPay180(t *testing.T) {
 	expected := 180
 
-	r := NewPromotionRepositoriesMock()
-	s := services.New(r.GetPromotion())
+	r := NewPromotionRepositoriesMock().GetPromotion()
+	s := services.New(r)
 	actual, _ := s.CalculateDiscount(200)
 
 	assert.Equal(t, expected, actual)
