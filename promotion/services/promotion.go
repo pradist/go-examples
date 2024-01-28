@@ -1,10 +1,19 @@
 package services
 
-import "go-examples/promotion/repositories"
+import (
+	"errors"
+	"go-examples/promotion/repositories"
+)
 
-func CalculateDiscount(amount int) int {
+func CalculateDiscount(amount int) (int, error) {
+
+	if amount == 0 {
+		return 0, errors.New("amount is less than zero")
+	}
+
 	p := repositories.New()
+
 	promotion := p.Get()
 
-	return amount - (amount * promotion.DiscountPercent / 100)
+	return amount - (amount * promotion.DiscountPercent / 100), nil
 }
