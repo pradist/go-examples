@@ -7,7 +7,7 @@ type Promotion struct {
 }
 
 type PromotionRepository interface {
-	Get() (Promotion, error)
+	GetPromotion() (Promotion, error)
 }
 
 type promotionRepository struct{}
@@ -16,7 +16,7 @@ func NewPromotionRepository() PromotionRepository {
 	return &promotionRepository{}
 }
 
-func (p *promotionRepository) Get() (Promotion, error) {
+func (p *promotionRepository) GetPromotion() (Promotion, error) {
 	return Promotion{
 		ID:              1,
 		PurchaseMin:     100,

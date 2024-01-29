@@ -11,7 +11,7 @@ func TestPromotionGet_ShouldReturnIDIs10(t *testing.T) {
 	expected := 1
 
 	p := repositories.NewPromotionRepository()
-	r, _ := p.Get()
+	r, _ := p.GetPromotion()
 	actual := r.ID
 
 	assert.Equal(t, expected, actual)
@@ -21,7 +21,7 @@ func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
 	expected := 10
 
 	p := repositories.NewPromotionRepository()
-	r, _ := p.Get()
+	r, _ := p.GetPromotion()
 	actual := r.DiscountPercent
 
 	assert.Equal(t, expected, actual)
@@ -31,7 +31,7 @@ func TestPromotionGet_ShouldReturnPurchaseMinIs100(t *testing.T) {
 	expected := 100
 
 	p := repositories.NewPromotionRepository()
-	r, _ := p.Get()
+	r, _ := p.GetPromotion()
 	actual := r.PurchaseMin
 
 	assert.Equal(t, expected, actual)

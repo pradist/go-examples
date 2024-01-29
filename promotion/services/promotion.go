@@ -22,7 +22,7 @@ func (p PromotionService) CalculateDiscount(amount int) (int, error) {
 	}
 
 	r := repositories.NewPromotionRepository()
-	promotion, _ := r.Get()
+	promotion, _ := r.GetPromotion()
 
 	return amount - (amount * promotion.DiscountPercent / 100), nil
 }
