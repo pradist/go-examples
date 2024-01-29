@@ -10,7 +10,7 @@ import (
 func TestPromotionGet_ShouldReturnIDIs10(t *testing.T) {
 	expected := 1
 
-	p := repositories.New()
+	p := repositories.NewPromotionRepository()
 	r, _ := p.Get()
 	actual := r.ID
 
@@ -20,7 +20,7 @@ func TestPromotionGet_ShouldReturnIDIs10(t *testing.T) {
 func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
 	expected := 10
 
-	p := repositories.New()
+	p := repositories.NewPromotionRepository()
 	r, _ := p.Get()
 	actual := r.DiscountPercent
 
@@ -30,7 +30,7 @@ func TestPromotionGet_ShouldReturnDiscountPercentIs10(t *testing.T) {
 func TestPromotionGet_ShouldReturnPurchaseMinIs100(t *testing.T) {
 	expected := 100
 
-	p := repositories.New()
+	p := repositories.NewPromotionRepository()
 	r, _ := p.Get()
 	actual := r.PurchaseMin
 
